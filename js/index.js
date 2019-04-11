@@ -130,7 +130,7 @@ function getTable() {
             events: operateEvents,
             formatter: function (value, row, index) {
                 return [
-                    '<button id = "TableDelete" type="button" class = "btn btn-info"  data-target:"#myModal">删除</button>',
+                    '<button id = "TableDelete" type="button" class = "buttonTheme"  data-target:"#myModal">删除</button>',
                 ].join('');
             }
         }],

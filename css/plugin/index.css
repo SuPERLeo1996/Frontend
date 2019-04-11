@@ -8,3 +8,85 @@
     font-weight: bold;
     border: none;
 }
+.buttonTheme {
+    float: left;
+    background-color: #46AAE6;
+    color: #ffffff;
+    width: 79px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px;
+}
+
+/*.btnSm{*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+    /*background-color: #46AAE6;*/
+    /*color: #ffffff;*/
+    /*border-radius: 5px;*/
+/*}*/
+
+/*.btnDel {*/
+    /*background: url('https://static.bokao2o.com/images/s3backend/delete_blue.png?v=2');*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+/*.btnDetail {*/
+    /*background: url('https://static.bokao2o.com/images/s3backend/detail_blue.png?v=2');*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+/*.btnMessage {*/
+    /*background: url('https://static.bokao2o.com/images/message_blue.png?imageView2/0/h/24/w/24');*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+/*.btnGotoNewTab {*/
+    /*background: url('https://static.bokao2o.com/images/s3backend/goto_newtab_blue.png?v=1.0');*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+/*.btnGotoDelTab {*/
+    /*background: url('https://static.bokao2o.com/images/s3backend/delete_blue.png?v=2');*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+/*.btnWechatPush {*/
+    /*background: url('https://static.bokao2o.com/images/s3backend/wechatpush.png?v=1.0') no-repeat;*/
+    /*background-size: contain;*/
+    /*width:25px;*/
+    /*height:25px;*/
+    /*cursor: pointer;*/
+    /*border: none;*/
+    /*outline: none;*/
+/*}*/
+
+/*.btnAdd{*/
+    /*position: absolute;*/
+    /*top: 6px;*/
+    /*right: 10px;*/
+    /*width: 25px;*/
+    /*height: 25px;*/
+    /*background-image: url("https://static.bokao2o.com/images/s3backend/add_item_white.png");*/
+    /*background-size: contain;*/
+    /*cursor: pointer;*/
+/*}*/
+
