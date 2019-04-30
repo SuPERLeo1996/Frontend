@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="../css/plugin/index.css" rel="stylesheet"/>
+    <link href="../css/index.css" rel="stylesheet"/>
     <link href="../css/plugin/jquery-ui.min.css" rel="stylesheet"/>
     <link href="../css/plugin/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/plugin/fileinput.min.css" rel="stylesheet"/>
@@ -39,15 +39,22 @@
 
     </div>
 </nav>
-<div class="panel-body" style="padding-bottom:0px;">
+<div class="panel panel-default">
     <div class="panel-heading">
-        <div>
-            <span>账户类别:</span>
-            <input id="employeeInfo_keyword" type="text"placeholder="请输入任意关键字">
-        </div>
+        <h4 style="text-align: center;">公共资源库</h4>
     </div>
-    <div class="panel panel-default">
-        <table id="table" class="table table-striped table-hover">
+    <div class="panel-body">
+        <div>
+            <div class="col-lg-3">
+                <span style="font-size: 10pt">文件名称:</span>
+                <input id="keywords" class="input" placeholder="请输入文件名称">
+            </div>
+            <div>
+                <button class="search">查询</button>
+            </div>
+        </div>
+
+        <table id="table" class="table table-striped table-hover" style="table-layout: fixed;margin-top: 5px;">
         </table>
     </div>
 </div>

@@ -76,11 +76,52 @@ function getTable1() {
 }
 
 window.operateEvents = {
-    "click #TableEditor":function(ev,value,row,index){
-        //触发点击事件后 ...
-    }
-};
+    'click #download': function (e, value, row, index) {
+        // console.log(value,row,index);
+        window.open("http://localhost:8888/server/file/download/"+row["id"]);
+        // $.ajax({
+        //     type : "POST",
+        //     url : "/wadmin/ad/deleteAd",
+        //     data : {
+        //         adId : row['adId']
+        //     },
+        //     dataType : 'JSON',
+        //     success : function (data) {
+        //         if (data.result != 0) {
+        //             toastr.info("info", data.message);
+        //             return ;
+        //         }
+        //         toastr.success("success", '删除成功');
+        //         $("#table").bootstrapTable('remove', {
+        //             field: 'adId',
+        //             values: [row['adId']]
+        //         });
+        //     }
+        // });
 
+        // return false;
+    },
+    'click #delete': function (e, value, row, index) {
+        // $.ajax({
+        //     type : "POST",
+        //     url : "/wadmin/ad/usingAd",
+        //     data : {
+        //         adId : row['adId']
+        //     },
+        //     dataType : 'JSON',
+        //     success : function (data) {
+        //         if (data.result != 0) {
+        //             toastr.info("info", data.message);
+        //             return ;
+        //         }
+        //         toastr.success("success", '使用该广告');
+        //         $("#table").bootstrapTable('refresh');
+        //     }
+        // });
+
+        return false;
+    },
+};
 
 function getTable() {
     $('#table').bootstrapTable({
@@ -106,31 +147,44 @@ function getTable() {
         //	detailView : false, // 是否显示父子表
         search: false,   //是否启用搜索框
         columns: [{
+            //field: 'Number',//可不加
+            title: '序号',//标题  可不加
+            align: 'center',
+            valign: 'middle',
+            width: 10,
+            formatter: function (value, row, index) {
+                return index+1;
+            }
+        },{
             field: 'fileName',
             title: '文件名称',
             align: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            width: 100,
         }, {
             field: 'createTimeStr',
             title: '创建时间',
             align: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            width: 100,
 
         }, {
             field: 'count',
             title: '下载次数',
             align: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            width: 30,
 
         }, {
             field: 'tDepartment',
             title: '操作',
             align: 'center',
             valign: 'middle',
+            width: 55,
             events: operateEvents,
             formatter: function (value, row, index) {
                 return [
-                    '<button id = "TableDelete" type="button" class = "buttonTheme"  data-target:"#myModal">删除</button>',
+                    '<div style="margin-left: 10px;"><button id = "download" class = "buttonTheme">下载</button><button id = "delete" class = "buttonTheme">删除</button></div>',
                 ].join('');
             }
         }],
@@ -142,14 +196,10 @@ function getTable() {
     });
 
 
-
-
-
-    //使用函数，添加按钮
-    function AddFunctionAlty(value,row,index){
-        return [
-            '<button id = "TableEditor" type="button" class = "btn btn-info btngroup" data-target:"#myModal" >编辑</button>',
-            '<button id = "TableDelete" type="button" class = "btn btn-info btngroup"  data-target:"#myModal">删除</button>',
-        ].join('');
+    function downloadFile(item) {
+        // window.open("http://localhost:8888/server/file/download/"+item.id);
+        console.log(item);
     }
+
+
 }
