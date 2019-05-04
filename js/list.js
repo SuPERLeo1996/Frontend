@@ -22,7 +22,7 @@ $(function () {
     }
     $.ajax({
         type: "GET",
-        url: "http://localhost:8888/file/suffix/get",
+        url: "http://localhost:8888/file/user/suffix/get?token="+$.cookie('token'),
         dataType: "JSON",
         success: function (res) {
             if(res.success){
@@ -34,20 +34,20 @@ $(function () {
         }
     });
 
-    getTable("http://localhost:8888/file/list");
+    getTable("http://localhost:8888/file/user/list?token="+$.cookie('token'));
 
 });
 
 function uploadPage() {
-    window.open('uploadFile.html');
+    window.open('uploadFile1.html');
 }
 
 function searchList() {
     var keywords = $('#keywords').val();
     var type = $("#mySelect2").select2("data")[0];
-    var url = "http://localhost:8888/file/list?keywords=";
+    var url = "http://localhost:8888/file/user/list?token="+$.cookie('token');
     if(keywords){
-        url += keywords;
+        url += "&keywords=" + keywords;
     }
     if(type.text != "全部"){
         url += "&fileSuffix="+type.text;
@@ -55,12 +55,6 @@ function searchList() {
     $('#table').bootstrapTable('destroy');
     getTable(url);
 }
-
-function logout() {
-    $.cookie('token', '', { expires: -1,path:'/ '}); // 删除 cookie
-    location.reload() ;
-}
-
 
 window.operateEvents = {
     'click #download': function (e, value, row, index) {

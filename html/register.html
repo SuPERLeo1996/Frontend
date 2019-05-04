@@ -19,6 +19,7 @@
 	<script src="../js/plugin/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script src="../js/plugin/bootstrap-table.min.js"></script>
 	<script src="../js/plugin/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/register.js"></script>
 
 
 </head>
@@ -26,17 +27,17 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">首页</a>
+			<a class="navbar-brand" href="index.html">首页</a>
 		</div>
 		<div>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a class=""><span class="glyphicon glyphicon-log-in"></span>&nbsp;登录</a>
-				</li>
-				<li>
-					<a><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
-				</li>
-			</ul>
+			<!--<ul class="nav navbar-nav navbar-right">-->
+				<!--<li>-->
+					<!--<a class=""><span class="glyphicon glyphicon-log-in"></span>&nbsp;登录</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>-->
+				<!--</li>-->
+			<!--</ul>-->
 		</div>
 
 	</div>
@@ -50,22 +51,23 @@
 					<div class="sub-main-w3 text-center">
 						<h3>欢迎注册</h3>
 						<p class="mt-2 mb-4">每一天，乐在分享</p>
-						<form action="#" method="post">
+						<!--<form id="registerForm">-->
 							<div class="icon1">
-								<input placeholder="请输入用户名" name="name" type="text" required="">
+								<input placeholder="请输入用户名" id="username" name="username" type="text" required="true">
 							</div>
 							<div class="icon1">
-								<input placeholder="请输入邮箱名" name="mail" type="email" required="">
+								<input placeholder="请输入邮箱名" id="email" name="email" type="email" required="true" style="width: 350px;float: left;">
+								<button onclick="sendMail()" style="height: 45px;width: 80px;color: #fff;background: #0a8ea0;border: none;font-size: 17px;cursor: pointer;">发送邮件</button>
 							</div>
 							<div class="icon2">
-								<input  placeholder="请输入手机号" name="phone" type="text" required="">
+								<input placeholder="请输入密码" id="password" name="password" type="password">
 							</div>
 							<div class="icon2">
-								<input  placeholder="请输入密码" name="Password" type="password" required="">
+								<input placeholder="请输入邮箱验证码" id="code" name="code" type="text">
 							</div>
-							<input type="submit" value="创建账号">
+							<input type="submit" onclick="register()" value="创建账号">
 							<p>已有账号 ? <a href="signin.html" class="ml-2"><strong>登录你的账号</strong></a></p>
-						</form>
+						<!--</form>-->
 					</div>
 				</div>
 				<div class="col-md-6">
