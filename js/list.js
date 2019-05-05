@@ -2,7 +2,7 @@ $(function () {
     if($.cookie('token')){
         $.ajax({
             type: "GET",
-            url: "http://localhost:8888/account/login/info/get?token="+$.cookie('token'),
+            url: "http://192.168.152.128:8888/account/login/info/get?token="+$.cookie('token'),
             dataType: "JSON",
             success: function (res) {
                 if(res.success){
@@ -22,7 +22,7 @@ $(function () {
     }
     $.ajax({
         type: "GET",
-        url: "http://localhost:8888/file/user/suffix/get?token="+$.cookie('token'),
+        url: "http://192.168.152.128:8888/file/user/suffix/get?token="+$.cookie('token'),
         dataType: "JSON",
         success: function (res) {
             if(res.success){
@@ -34,9 +34,14 @@ $(function () {
         }
     });
 
-    getTable("http://localhost:8888/file/user/list?token="+$.cookie('token'));
+    getTable("http://192.168.152.128:8888/file/user/list?token="+$.cookie('token'));
 
 });
+
+function logout() {
+    $.cookie('token', '', { expires: -1,path:'/ '}); // 删除 cookie
+    window.location.href="index.html";
+}
 
 function uploadPage() {
     window.open('uploadFile1.html');
@@ -45,7 +50,7 @@ function uploadPage() {
 function searchList() {
     var keywords = $('#keywords').val();
     var type = $("#mySelect2").select2("data")[0];
-    var url = "http://localhost:8888/file/user/list?token="+$.cookie('token');
+    var url = "http://192.168.152.128:8888/file/user/list?token="+$.cookie('token');
     if(keywords){
         url += "&keywords=" + keywords;
     }
@@ -59,7 +64,7 @@ function searchList() {
 window.operateEvents = {
     'click #download': function (e, value, row, index) {
         // console.log(value,row,index);
-        window.open("http://localhost:8888/server/file/download/"+row["id"]);
+        window.open("http://192.168.152.128:8888/server/file/download/"+row["id"]);
         // $.ajax({
         //     type : "POST",
         //     url : "/wadmin/ad/deleteAd",
@@ -85,7 +90,7 @@ window.operateEvents = {
     'click #delete': function (e, value, row, index) {
         $.ajax({
             type : "GET",
-            url : "http://localhost:8888/file/delete?id="+row["id"],
+            url : "http://192.168.152.128:8888/file/delete?id="+row["id"],
             dataType : 'JSON',
             success : function (data) {
                 if (data.success) {

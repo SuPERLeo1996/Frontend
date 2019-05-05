@@ -15,7 +15,7 @@ function login() {
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "http://localhost:8888/account/login",
+        url: "http://192.168.152.128:8888/account/login",
         dataType: "JSON",
         data:JSON.stringify(data),
         success: function (res) {
@@ -24,7 +24,7 @@ function login() {
                 var exp = new Date();
                 exp.setTime(exp.getTime() + 24*60*60*1000);
                 document.cookie = "token" + "="+ res.result + ";expires=" + exp.toGMTString()+";path=/";
-                // window.location.href="signin.html";
+                window.location.href="index.html";
             }else {
                 alert(res.msg);
             }

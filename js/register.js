@@ -4,7 +4,7 @@ function sendMail() {
     if($('#email').val()){
         $.ajax({
             type: "GET",
-            url: "http://localhost:8888/account/send/mail?email="+$('#email').val(),
+            url: "http://192.168.152.128:8888/account/send/mail?email="+$('#email').val(),
             dataType: "JSON",
             success: function (res) {
                 if(res.success){
@@ -57,7 +57,7 @@ function register() {
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "http://localhost:8888/account/register",
+        url: "http://192.168.152.128:8888/account/register",
         dataType: "JSON",
         data:JSON.stringify(data),
         success: function (res) {

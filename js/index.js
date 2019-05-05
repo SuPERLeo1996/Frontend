@@ -2,7 +2,7 @@ $(function () {
     if($.cookie('token')){
         $.ajax({
             type: "GET",
-            url: "http://localhost:8888/account/login/info/get?token="+$.cookie('token'),
+            url: "http://192.168.152.128:8888/account/login/info/get?token="+$.cookie('token'),
             dataType: "JSON",
             success: function (res) {
                 if(res.success){
@@ -22,7 +22,7 @@ $(function () {
     }
     $.ajax({
         type: "GET",
-        url: "http://localhost:8888/file/suffix/get",
+        url: "http://192.168.152.128:8888/file/suffix/get",
         dataType: "JSON",
         success: function (res) {
             if(res.success){
@@ -34,7 +34,7 @@ $(function () {
         }
     });
 
-    getTable("http://localhost:8888/file/list");
+    getTable("http://192.168.152.128:8888/file/list");
 
 });
 
@@ -45,7 +45,7 @@ function uploadPage() {
 function searchList() {
     var keywords = $('#keywords').val();
     var type = $("#mySelect2").select2("data")[0];
-    var url = "http://localhost:8888/file/list?keywords=";
+    var url = "http://192.168.152.128:8888/file/list?keywords=";
     if(keywords){
         url += keywords;
     }
@@ -65,7 +65,7 @@ function logout() {
 window.operateEvents = {
     'click #download': function (e, value, row, index) {
         // console.log(value,row,index);
-        window.open("http://localhost:8888/server/file/download/"+row["id"]);
+        window.open("http://192.168.152.128:8888/server/file/download/"+row["id"]);
         // $.ajax({
         //     type : "POST",
         //     url : "/wadmin/ad/deleteAd",
@@ -91,7 +91,7 @@ window.operateEvents = {
     'click #delete': function (e, value, row, index) {
         $.ajax({
             type : "GET",
-            url : "http://localhost:8888/file/delete?id="+row["id"],
+            url : "http://192.168.152.128:8888/file/delete?id="+row["id"],
             dataType : 'JSON',
             success : function (data) {
                 if (data.success) {
