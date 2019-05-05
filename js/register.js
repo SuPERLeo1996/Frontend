@@ -25,12 +25,22 @@ function register() {
         alert("请输入用户名！");
         return;
     }
+    var reg = /^[a-zA-Z][a-zA-Z0-9]{3,12}$/
+    if(!reg.test($('#username').val())){
+        alert("用户名只允许输入4到12位字母和数字");
+        return;
+    }
     if(!$('#email').val()){
         alert("请输入邮箱！");
         return;
     }
     if(!$('#password').val()){
         alert("请输入密码！");
+        return;
+    }
+    var reg1 = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}:";'<>?,.\/]).{8,16}$/;
+    if(!reg1.test($('#password').val())){
+        alert("密码必须由8到16位字母、数字、特殊符号线组成.");
         return;
     }
     if(!$('#code').val()){
