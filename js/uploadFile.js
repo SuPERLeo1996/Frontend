@@ -1,7 +1,7 @@
 $(function () {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8888/account/login/info/get?token="+$.cookie('token'),
+        url: "http://192.168.152.128:8888/account/login/info/get?token="+$.cookie('token'),
         dataType: "JSON",
         success: function (res) {
             if(res.success){
